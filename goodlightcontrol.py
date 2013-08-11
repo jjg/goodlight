@@ -5,9 +5,25 @@ import sys
 import gtk
 #gtk.require("3.0")
 import gtk.glade
+import serial
 
 class goodlight_control:
-    wTree = None
+
+    PORT = '/dev/ttyACM0'
+    SPEED = 9600
+
+    def send_command(self, val):
+
+        print 'sending command %s' % val
+
+        connection = serial.Serial( self.PORT, 
+                                    self.SPEED,
+                                    timeout=0,
+                                    stopbits=serial.STOPBITS_TWO
+                                    )
+        #connection.write(val)
+        #connection.close()
+
 
     def __init__(self):
         gladefile = "goodlight.glade"
@@ -37,8 +53,20 @@ class goodlight_control:
 
     def on_power_toggled(self, widget):
         #switch_state = self.wTree.get_widget("power").active()
-        print "power clicked"
-        print widget.get_active()
+        #print "power clicked"
+        #print widget.get_active()
+
+        power_button_on = widget.get_active()
+        command = 0
+
+        if power_button_on:
+            command = 1
+
+        if not power_button_on:
+            command = 0
+
+        self.send_command(command)
+
 
     def on_window1_destroy(self, widget):
         sys.exit(0)
