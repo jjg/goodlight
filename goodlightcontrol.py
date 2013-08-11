@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# reference:
+# http://www.overclock.net/t/342279/tutorial-using-python-glade-to-create-a-simple-gui-application
+# http://fabian-affolter.ch/blog/arduino-controlled-by-a-gtk-interface/
+
 import sys
 #import pygtk
 import gtk
@@ -21,8 +25,8 @@ class goodlight_control:
                                     timeout=0,
                                     stopbits=serial.STOPBITS_TWO
                                     )
-        #connection.write(val)
-        #connection.close()
+        connection.write(val)
+        connection.close()
 
 
     def __init__(self):
