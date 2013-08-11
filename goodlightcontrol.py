@@ -38,7 +38,7 @@ class goodlight_control:
     def on_power_toggled(self, widget):
         #switch_state = self.wTree.get_widget("power").active()
         print "power clicked"
-        print widget
+        print widget.get_active()
 
     def on_window1_destroy(self, widget):
         sys.exit(0)
