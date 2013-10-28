@@ -7,6 +7,7 @@ Cast your webcam in a good light
 
  *  Arduino (Uno or better seems to work)
  *  Adafruit NeoPixel Ring - http://www.adafruit.com/products/1463
+ *  Custom 3d printed case
  
 ##Software
 
