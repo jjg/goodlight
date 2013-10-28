@@ -13,6 +13,7 @@ Cast your webcam in a good light
 
  *  goodlightUI.py - Python/Tkinter GUI
  *  goodlight.scad - OpenSCAD model of printable case
+ *  goodlight.stl - rendered 3d model for the lazy...
  *  goodlight_firmware - Arduino sketch of Goodlight firmware
 
 ##TODO
